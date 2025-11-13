@@ -5,11 +5,14 @@ import { UpdateJobController } from "../controllers/jobs/update-job.controller";
 
 const router = Router();
 
+const JOB = "job";
+const UPDATE = "update";
+
 router.get("/test", new TestController().handle);
 
-router.post("/job", new CreateJobController().handle);
+router.post(`/${JOB}`, new CreateJobController().handle);
 
-router.put("/job/update", new UpdateJobController().handle);
-router.patch("/job/update", new UpdateJobController().handle);
+router.put(`/${JOB}/${UPDATE}`, new UpdateJobController().handle);
+router.patch(`/${JOB}/${UPDATE}`, new UpdateJobController().handle);
 
 export { router };
